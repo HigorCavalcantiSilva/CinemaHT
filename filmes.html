@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes - Cinema HT</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script type="module">
+        import ControllerFilme from "./js/controller/Filme.js";
+        window.controllerFilme = new ControllerFilme();
+    </script>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-2 navbar-left">
+            <h4 class="title">Cinema High Tech</h4>
+            <div class="list-group">
+                <a href="./reservas.html"><div class="list-group-item item">Reservas</div></a>
+                <a href="./sessoes.html"><div class="list-group-item item">Sessões</div></a>
+                <a href="./salas.html"><div class="list-group-item item">Salas</div></a>
+                <a href="./clientes.html"><div class="list-group-item item">Clientes</div></a>
+                <a href="./filmes.html"><div class="list-group-item item actv">Filmes</div></a>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="header">
+                <h4>Gerência de Filmes</h4>    
+            </div>
+            <h2>Novo Filme</h2>
+            <br>
+            <div class="row">
+                <div class="col-md-2">
+                    <label for="nome">Título do filme:</label>
+                </div>
+                <div class="col-md-10">
+                    <input class="form-control" placeholder="Digite o nome" type="text" id="titulo">
+                </div>
+                <br><br><br>
+                <div class="col-md-2">
+                    <label for="nome">Duração:</label>
+                </div>
+                <div class="col-md-10">
+                    <input class="form-control" placeholder="Digite a duração" type="number" id="duracao">
+                </div>
+                <br><br><br>
+                <div class="col-md-2">
+                    <label for="nome">Classificação Etária:</label>
+                </div>
+                <div class="col-md-10">
+                    <input class="form-control" placeholder="Ex: 14 anos" type="text" id="classificacao">
+                </div>
+            </div>
+            <br>
+            <button class="btn btn-primary" onclick="controllerFilme.salvar()">Salvar</button>
+            <button class="btn btn-danger" onclick="controllerFilme.cancelar()">Cancelar</button>
+            <br><br>
+            <h2>Filmes Cadastrados</h2>
+            <table class="table table-stripped">
+                <thead>
+                    <tr>
+                        <th>Título do Filme</th>
+                        <th>Duração</th>
+                        <th>Classificação</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
