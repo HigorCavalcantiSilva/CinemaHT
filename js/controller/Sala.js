@@ -13,13 +13,13 @@ export default class ControllerSala {
         sala.salvar(this.indice);
         sala.mostrar();
         this.cancelar();
+        this.indice =  -1;
     }
 
     editar(id){
         let indice = new Sala().buscarPorId(id);
         document.getElementById("sala").value = indice[0].sala;
         this.indice = indice[1];
-        this.indice =  -1;
     }
 
     apagar(id){
@@ -32,6 +32,7 @@ export default class ControllerSala {
 
     cancelar(){
         document.getElementById("sala").value = "";
+        this.indice =  -1;
     }
 
 
